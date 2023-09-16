@@ -1,0 +1,109 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  flex: none;
+  height: 80vh;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+
+  width: 100%;
+  padding: 0 20%;
+
+  box-sizing: border-box;
+}
+
+.button {
+  min-width: max(30vw, 300px);
+  font-weight: bold;
+  padding: 16px;
+  background-color: #ffcc16;
+  border: 4px solid #ffcc16;
+}
+
+.button:hover {
+  outline: none;
+  border: 4px solid #ffcc16;
+  color: #ffcc16;
+  background-color: #c7000b;
+}
+
+.button:focus, .button:focus-visible {
+  outline: none;
+}
+
+.scan {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan > span {
+  cursor: pointer;
+  color: #333;
+}
+
+.scan > span:hover {
+  color: #c7000b;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.16s;
+}
+
+.modal[data-visible='false'] {
+  opacity: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.modal[data-visible='true'] {
+  opacity: 1;
+  pointer-events: all;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal > img {
+  width: 80vw;
+  max-width: 400px;
+  border-radius: 28px;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.16s;
+}
+
+.modal[data-visible='false'] > img {
+  transform: scale(0.8);
+}
+
+.modal[data-visible='true'] > img {
+  transform: scale(1);
+}
+
+.modal > p {
+  font-size: large;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
